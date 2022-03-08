@@ -1,8 +1,8 @@
 # ProjetStat
 
 [La Feuille de route](https://github.com/l3miage-gambiezj/ProjetStat/blob/master/ReadMe_Gambiez-Mahi-Gourdon-Frances.md). \
-[Les informations](https://github.com/l3miage-gambiezj/ProjetStat/blob/master/InfoProjet.md) sur le projet de statistique.
-[Compte Rendu](https://docs.google.com/document/d/1uJ8qKiBnoCDlUOT2wjCiRSdeRVSXhIKF8rwiTWketL4/edit?usp=sharing).
+[Les informations](https://github.com/l3miage-gambiezj/ProjetStat/blob/master/InfoProjet.md) sur le projet de statistique.\
+[Compte Rendu](https://docs.google.com/document/d/1uJ8qKiBnoCDlUOT2wjCiRSdeRVSXhIKF8rwiTWketL4/edit?usp=sharing). \
 # Membres
 
 * GAMBIEZ Jérôme
