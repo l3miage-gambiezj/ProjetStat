@@ -22,6 +22,8 @@ You need to use the _tidyverse_ for this analysis. Unzip the file _dpt2020_txt.z
 
 ## Construction de la dataframe depuis les fichiers de données
 
+Nous allons dans un premier temps récuperer les données depuis nos fichiers csv. 
+
 ```{r}
 library(tidyverse)
 
@@ -29,57 +31,69 @@ dataCrolles <- read_delim("Data/15048_Crolles.csv",delim=",", col_types = "ccTcd
 dataCrollesF = dataCrolles %>%
   filter(parameter == "no2");
 dataCrollesF
-nb_observations_Crolles = dataCrollesF %>% count();
-nb_observations_Crolles
-
-maxDateCrolles = max(dataCrollesF$local)
-minDateCrolles = min(dataCrollesF$local)
-maxDateCrolles
-minDateCrolles
 
 dataVoiron <- read_delim("Data/15018_Voiron.csv",delim=",", col_types = "ccTcdc")
 dataVoironF = dataVoiron %>%
   filter(parameter == "no2")
-
-maxDateVoiron = max(dataVoironF$local)
-minDateVoiron = min(dataVoironF$local)
-maxDateVoiron 
-minDateVoiron 
+dataVoironF
 
 dataRondeau <- read_delim("Data/15039_Rondeau.csv",delim=",", col_types = "ccTcdc")
 dataRondeauF = dataRondeau %>%
   filter(parameter == "no2")
+dataRondeauF
 
-maxDateRondeau = max(dataRondeauF$local)
-minDateRondeau = min(dataRondeauF$local)
-maxDateRondeau 
-minDateRondeau
-
-dataChampSurDrack <- read_delim("Data/15013_Champ_sur_Drack.csv",delim=",", col_types = "ccTcdc")
-dataChampSurDrackF = dataChampSurDrack %>%
+dataChampSurDrac <- read_delim("Data/15013_Champ_sur_Drac.csv",delim=",", col_types = "ccTcdc")
+dataChampSurDracF = dataChampSurDrac %>%
   filter(parameter == "no2")
-
-maxDateChampSurDrack = max(dataChampSurDrackF$local)
-minDateChampSurDrack = min(dataChampSurDrackF$local)
-maxDateChampSurDrack 
-minDateChampSurDrack
+dataChampSurDracF
 
 dataGrenoble <- read_delim("Data/15046_Grenoble.csv",delim=",", col_types = "ccTcdc")
 dataGrenobleF = dataGrenoble %>%
   filter(parameter == "no2")
+dataGrenobleF
 
-maxDateGrenoble = max(dataGrenobleF$local)
-minDateGrenoble = min(dataGrenobleF$local)
-maxDateGrenoble 
-minDateGrenoble
+```
+Nombre d'observations pour chaque jeu de données
+
+```{r}
+nb_observations_Crolles = dataCrollesF %>% count();
+nb_observations_Crolles
+
+nb_observations_Voiron = dataVoironF %>% count();
+nb_observations_Voiron
+
+nb_observations_Rondeau = dataRondeauF %>% count();
+nb_observations_Rondeau
+
+nb_observations_ChampSurDrac = dataChampSurDracF %>% count();
+nb_observations_ChampSurDrac
+
+nb_observations_Grenoble = dataGrenobleF %>% count();
+nb_observations_Grenoble
+
 ```
 
-All of these following questions may need a preliminary analysis of the data, feel free to present answers and justifications in your own order and structure your report as it should be for a scientific report.
+Intervalle des dates
 
-1. Choose a firstname and analyse its frequency along time. Compare several firstnames frequency
-2. Establish by gender the most given firstname by year. Analyse the evolution of the most frequent firstname.
-3. Optional : Which department has a larger variety of names along time ? Is there some sort of geographical correlation with the data?
+```{r}
+rangeDateCrolles = range(dataCrollesF$local)
+rangeDateCrolles
 
+rangeDateVoiron = range(dataVoironF$local)
+rangeDateVoiron
+
+rangeDateRondeau = range(dataRondeauF$local)
+rangeDateRondeau
+
+rangeDateChampSurDrac = range(dataChampSurDracF$local)
+rangeDateChampSurDrac
+
+rangeDateGrenoble = range(dataGrenobleF$local)
+rangeDateGrenoble
+
+```
+
+Moyenne des quantitées de no2 par jour
 
 
 ```{r}
