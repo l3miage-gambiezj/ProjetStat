@@ -27,69 +27,81 @@ Nous allons dans un premier temps récuperer les données depuis nos fichiers cs
 ```{r}
 library(tidyverse)
 
-dataCrolles <- read_delim("Data/15048_Crolles.csv",delim=",", col_types = "ccTcdc")
-dataCrollesF = dataCrolles %>%
+data_crolles <- read_delim("Data/15048_Crolles.csv",delim=",", col_types = "ccTcdc")
+data_crolles_f = data_crolles %>%
   filter(parameter == "no2");
-dataCrollesF
+data_crolles_f
 
-dataVoiron <- read_delim("Data/15018_Voiron.csv",delim=",", col_types = "ccTcdc")
-dataVoironF = dataVoiron %>%
+data_voiron <- read_delim("Data/15018_Voiron.csv",delim=",", col_types = "ccTcdc")
+data_voiron_f = data_voiron %>%
   filter(parameter == "no2")
-dataVoironF
+data_voiron_f
 
-dataRondeau <- read_delim("Data/15039_Rondeau.csv",delim=",", col_types = "ccTcdc")
-dataRondeauF = dataRondeau %>%
+data_rondeau <- read_delim("Data/15039_Rondeau.csv",delim=",", col_types = "ccTcdc")
+data_rondeau_f = data_rondeau %>%
   filter(parameter == "no2")
-dataRondeauF
+data_rondeau_f
 
-dataChampSurDrac <- read_delim("Data/15013_Champ_sur_Drac.csv",delim=",", col_types = "ccTcdc")
-dataChampSurDracF = dataChampSurDrac %>%
+data_champ_sur_drac <- read_delim("Data/15013_Champ_sur_Drac.csv",delim=",", col_types = "ccTcdc")
+data_champ_sur_drac_f = data_champ_sur_drac %>%
   filter(parameter == "no2")
-dataChampSurDracF
+data_champ_sur_drac_f
 
-dataGrenoble <- read_delim("Data/15046_Grenoble.csv",delim=",", col_types = "ccTcdc")
-dataGrenobleF = dataGrenoble %>%
+data_grenoble <- read_delim("Data/15046_Grenoble.csv",delim=",", col_types = "ccTcdc")
+data_grenoble_f = data_grenoble %>%
   filter(parameter == "no2")
-dataGrenobleF
+data_grenoble_f
 
 ```
-Nombre d'observations pour chaque jeu de données
+Nombre d'observations pour chaque jeu de données (chaque ville)
 
 ```{r}
-nb_observations_Crolles = dataCrollesF %>% count();
-nb_observations_Crolles
+nb_observations_crolles = data_crolles_f %>% 
+  summarize(nb_obs_crolles = n()) ;
+nb_observations_crolles
 
-nb_observations_Voiron = dataVoironF %>% count();
-nb_observations_Voiron
+nb_observations_voiron = data_voiron_f %>%
+  summarize(nb_obs_voiron = n()) ;
+nb_observations_voiron
 
-nb_observations_Rondeau = dataRondeauF %>% count();
-nb_observations_Rondeau
+nb_observations_rondeau = data_rondeau_f %>%
+  summarize(nb_obs_rondeau = n()) ;
+nb_observations_rondeau
 
-nb_observations_ChampSurDrac = dataChampSurDracF %>% count();
-nb_observations_ChampSurDrac
+nb_observations_champ_sur_drac = data_champ_sur_drac_f %>%
+  summarize(nb_obs_champ_sur_drac = n()) ;
+nb_observations_champ_sur_drac
 
-nb_observations_Grenoble = dataGrenobleF %>% count();
-nb_observations_Grenoble
+nb_observations_grenoble = data_grenoble_f %>%
+  summarize(nb_obs_grenoble = n()) ;
+nb_observations_grenoble
 
 ```
 
 Intervalle des dates
 
 ```{r}
-rangeDateCrolles = range(dataCrollesF$local)
-rangeDateCrolles
 
-rangeDateVoiron = range(dataVoironF$local)
-rangeDateVoiron
+range_date_crolles = data_crolles_f %>% 
+  summarize(date_range_crolles = range(local)) ;
+range_date_crolles
 
-rangeDateRondeau = range(dataRondeauF$local)
-rangeDateRondeau
+range_date_voiron = data_voiron_f %>%
+  summarize(date_range_voiron = range(local)) ;
+range_date_voiron
 
-rangeDateChampSurDrac = range(dataChampSurDracF$local)
-rangeDateChampSurDrac
+range_date_rondeau = data_rondeau_f %>%
+  summarize(date_range_rondeau = range(local)) ;
+range_date_rondeau
 
-rangeDateGrenoble = range(dataGrenobleF$local)
-rangeDateGrenoble
+range_date_champ_sur_drac = data_champ_sur_drac_f %>%
+  summarize(date_range_champ_sur_drac = range(local)) ;
+range_date_champ_sur_drac
+
+range_date_grenoble = data_grenoble_f %>%
+  summarize(date_range_grenoble = range(local)) ;
+range_date_grenoble
+
 
 ```
 
