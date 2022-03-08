@@ -1,4 +1,4 @@
-[README](https://github.com/l3miage-gambiezj/ProjetStat/edit/master/README.md)
+[README](https://github.com/l3miage-gambiezj/ProjetStat/edit/master/)
 
 # ProjetStat
 
