@@ -9,4 +9,8 @@ Nous avons recolter les informations sur les villes de crolles, rondeau, champ s
 
 
 ### SEANCE DU 8/03
-ici ecrire le rendu de la seance
+Nous avons un lot de données brut, chaque ligne represente une heure avec un ensemble d'indicateur de pollution. 
+Dans cette étude nous allons nous focaliser sur un seul indicateur de pollution le NO2. 
+Le NO2 est principalement émis par le trafic routier et les activités industrielles.
+
+Lors de cette séance nous allons faire une moyenne sur chaque journée pour réduire le nombre de données pour réaliser notre graphique
