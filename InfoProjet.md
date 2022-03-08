@@ -1,3 +1,7 @@
+[La Feuille de route](https://github.com/l3miage-gambiezj/ProjetStat/blob/master/ReadMe_Gambiez-Mahi-Gourdon-Frances.md). \
+[Le README](https://github.com/l3miage-gambiezj/ProjetStat/).\
+[Compte Rendu](https://docs.google.com/document/d/1uJ8qKiBnoCDlUOT2wjCiRSdeRVSXhIKF8rwiTWketL4/edit?usp=sharing). 
+
 # MSPL-2021-2022
 
 Gitlab du cours de MIAGE-3 Modèles Statistiques et Programmation Lettrée
