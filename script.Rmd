@@ -1,0 +1,125 @@
+---
+title: "Pollution atmosphérique au dioxyde d'azote (no2) et à l'ozone (o3) ? dans le bassin grenoblois"
+author: "FRANCES Tom, GAMBIEZ Jérôme, GOURDON Jérémie, MAHI Riad"
+date: "Mars 2022"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# Le contexte
+The aim of the activity is to develop a methodology to answer a specific question on a given dataset. 
+
+The dataset is the set of Firstname given in France on a large period of time. 
+[https://www.insee.fr/fr/statistiques/2540004](https://www.insee.fr/fr/statistiques/fichier/2540004/dpt2020_txt.zip), we choose this dataset because it is sufficiently large, you can't do the analysis by hand, the structure is simple
+
+
+You need to use the _tidyverse_ for this analysis. Unzip the file _dpt2020_txt.zip_ (to get the **dpt2020.csv**). Read in R with this code. Note that you might need to install the `readr` package with the appropriate command.
+
+## Construction de la dataframe depuis les fichiers de données
+
+```{r}
+library(tidyverse)
+
+dataCrolles <- read_delim("Data/15048_Crolles.csv",delim=",", col_types = "ccTcdc")
+dataCrollesF = dataCrolles %>%
+  filter(parameter == "no2");
+dataCrollesF
+nb_observations_Crolles = dataCrollesF %>% count();
+nb_observations_Crolles
+
+maxDateCrolles = max(dataCrollesF$local)
+minDateCrolles = min(dataCrollesF$local)
+maxDateCrolles
+minDateCrolles
+
+dataVoiron <- read_delim("Data/15018_Voiron.csv",delim=",", col_types = "ccTcdc")
+dataVoironF = dataVoiron %>%
+  filter(parameter == "no2")
+
+maxDateVoiron = max(dataVoironF$local)
+minDateVoiron = min(dataVoironF$local)
+maxDateVoiron 
+minDateVoiron 
+
+dataRondeau <- read_delim("Data/15039_Rondeau.csv",delim=",", col_types = "ccTcdc")
+dataRondeauF = dataRondeau %>%
+  filter(parameter == "no2")
+
+maxDateRondeau = max(dataRondeauF$local)
+minDateRondeau = min(dataRondeauF$local)
+maxDateRondeau 
+minDateRondeau
+
+dataChampSurDrack <- read_delim("Data/15013_Champ_sur_Drack.csv",delim=",", col_types = "ccTcdc")
+dataChampSurDrackF = dataChampSurDrack %>%
+  filter(parameter == "no2")
+
+maxDateChampSurDrack = max(dataChampSurDrackF$local)
+minDateChampSurDrack = min(dataChampSurDrackF$local)
+maxDateChampSurDrack 
+minDateChampSurDrack
+
+dataGrenoble <- read_delim("Data/15046_Grenoble.csv",delim=",", col_types = "ccTcdc")
+dataGrenobleF = dataGrenoble %>%
+  filter(parameter == "no2")
+
+maxDateGrenoble = max(dataGrenobleF$local)
+minDateGrenoble = min(dataGrenobleF$local)
+maxDateGrenoble 
+minDateGrenoble
+```
+
+All of these following questions may need a preliminary analysis of the data, feel free to present answers and justifications in your own order and structure your report as it should be for a scientific report.
+
+1. Choose a firstname and analyse its frequency along time. Compare several firstnames frequency
+2. Establish by gender the most given firstname by year. Analyse the evolution of the most frequent firstname.
+3. Optional : Which department has a larger variety of names along time ? Is there some sort of geographical correlation with the data?
+
+
+
+```{r}
+FirstNames %>% 
+  filter(preusuel == "TOM") %>% 
+  group_by(preusuel, annais) %>% 
+  summarise(total = sum(nombre)) %>%
+  ggplot(aes(x=annais, y=total)) + geom_point() + ylim(0,NA) + theme_bw();
+
+```
+```{r}
+nb_NA_observations = FirstNames %>% filter(is.na(annais) | is.na(dpt)) %>% count();
+nb_NA_observations
+nb_observations = FirstNames %>% count();
+nb_observations
+nb_NA_observations * 100 / nb_observations;
+```
+Number of _PRENOMS_RARES
+```{r}
+n_rare = FirstNames %>%
+  filter(preusuel == "_PRENOMS_RARES") %>%
+  group_by(sexe) %>%
+  summarise(n_rare = n())
+n_rare
+```
+
+
+
+GGPLOT fonctionnement
+```{r}
+library(ggplot2)
+ggplot()
+pressure
+ggplot(data = pressure) + 
+  aes(x=temperature) + 
+  aes(y=pressure) + 
+  geom_point() + 
+  geom_line() +
+  labs(x="Temperature (deg C)") +
+  labs(y = "Pression") +
+  labs(title = "Titre")
+```
+
