@@ -1,6 +1,7 @@
 [La Feuille de route](https://github.com/l3miage-gambiezj/ProjetStat/blob/master/ReadMe_Gambiez-Mahi-Gourdon-Frances.md). \
 [Le README](https://github.com/l3miage-gambiezj/ProjetStat/).\
-[Compte Rendu](https://docs.google.com/document/d/1uJ8qKiBnoCDlUOT2wjCiRSdeRVSXhIKF8rwiTWketL4/edit?usp=sharing). 
+[Compte Rendu](https://docs.google.com/document/d/1uJ8qKiBnoCDlUOT2wjCiRSdeRVSXhIKF8rwiTWketL4/edit?usp=sharing). \
+[replit](https://replit.com/join/sjbuijydgr-jeromegambiez) pour coder tous ensemble du R. \
 
 # MSPL-2021-2022
 
