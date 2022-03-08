@@ -1,4 +1,6 @@
-[README](https://github.com/l3miage-gambiezj/ProjetStat/)
+[Le README](https://github.com/l3miage-gambiezj/ProjetStat/). \
+[Les informations](https://github.com/l3miage-gambiezj/ProjetStat/blob/master/InfoProjet.md) sur le projet de statistique.\
+[Compte Rendu](https://docs.google.com/document/d/1uJ8qKiBnoCDlUOT2wjCiRSdeRVSXhIKF8rwiTWketL4/edit?usp=sharing). 
 
 # ProjetStat
 
