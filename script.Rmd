@@ -83,23 +83,23 @@ Intervalle des dates
 ```{r}
 
 range_date_crolles = data_crolles_f %>% 
-  summarize(date_range_crolles = range(local)) ;
+  summarize(min_date_crolles = min(local), max_date_crolles = max(local)) ;
 range_date_crolles
 
 range_date_voiron = data_voiron_f %>%
-  summarize(date_range_voiron = range(local)) ;
+  summarize(min_date_voiron = min(local), max_date_voiron = max(local)) ;
 range_date_voiron
 
 range_date_rondeau = data_rondeau_f %>%
-  summarize(date_range_rondeau = range(local)) ;
+  summarize(min_date_rondeau = min(local), max_date_rondeau = max(local)) ;
 range_date_rondeau
 
 range_date_champ_sur_drac = data_champ_sur_drac_f %>%
-  summarize(date_range_champ_sur_drac = range(local)) ;
+  summarize(min_date_champ_sur_drac = min(local), max_date_champ_sur_drac = max(local)) ;
 range_date_champ_sur_drac
 
 range_date_grenoble = data_grenoble_f %>%
-  summarize(date_range_grenoble = range(local)) ;
+  summarize(min_date_grenoble = min(local), max_date_grenoble = max(local)) ;
 range_date_grenoble
 
 
