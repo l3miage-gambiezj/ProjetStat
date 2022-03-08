@@ -16,4 +16,3 @@
   - [ ] Donner le nombre de données apres avoir faire la moyenne pour chaque mois. 
   - [ ] Vérifier que les données soit bien TIDY. 
   - [ ] Vérifier qu'il y a pas de trou dans les données.
-  - [ ] ICI
