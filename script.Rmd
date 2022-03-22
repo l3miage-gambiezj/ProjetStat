@@ -51,6 +51,9 @@ data_grenoble <- read_delim("Data/15046_Grenoble.csv",delim=",", col_types = "cc
 data_grenoble_f = data_grenoble %>%
   filter(parameter == "no2")
 data_grenoble_f
+
+#Ajout de la colonne saison
+
 library(lubridate)
 data_grenoble_f %>%
   mutate(
